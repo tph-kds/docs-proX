@@ -1,0 +1,13 @@
+mkdocs
+mkdocs-terminal~=4.0
+pydantic
+markdown
+
+# Python Markdown Extensions
+pygments>=2.18
+pymdown-extensions>=10.12
+
+# MkDocs Plugins
+mkdocs-git-revision-date-plugin
+mkdocs-exclude-search
+mkdocs-macros-plugin>0.5.10

@@ -1,0 +1,17 @@
+[project]
+name = "docs-pro"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "markdown>=3.7",
+    "mkdocs>=1.6.1",
+    "mkdocs-exclude-search>=0.6.6",
+    "mkdocs-git-revision-date-plugin>=0.3.2",
+    "mkdocs-macros-plugin>0.5.10",
+    "mkdocs-terminal>=4.7.0",
+    "pydantic>=2.10.6",
+    "pygments>=2.18",
+    "pymdown-extensions>=10.12",
+]
