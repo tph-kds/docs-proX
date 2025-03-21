@@ -26,6 +26,7 @@
     --progress-bar-background: #444; /* Darker background for progress bar */
     --progress-bar-fill: #1a95e0; /* Bright color for progress bar fill */
     --code-bg-color: #1e1e1e; /* Darker background for code blocks */
+    --transparent-background: #00000038; /* Semi-transparent background for overlays */
     --input-style: solid; /* Keeping input style solid */
     --block-background-color: #202020; /* Darker background for block elements */
     --global-font-color: #eaeaea; /* Light font color for global elements */

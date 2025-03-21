@@ -23,7 +23,7 @@ nav:
 ## deploy settings
 theme:
   name: 'terminal'
-  # custom_dir: 'docs/theme_overrides'
+  custom_dir: 'docs/docs/assets/web/html'
   # palette: 
   #   - scheme: default
   #     toggle:
@@ -136,12 +136,19 @@ plugins:
   #     modules: 
   #       - mkdocs-terminal:terminal.pluglets.tile_grid.main
 
+extra_html:
+  # - overrides/extras.html
+  - assets/web/html/custom.html
 
 extra_css:
   # - overrides/extras.css
   - assets/web/css/styles.css
   - assets/web/css/dmvendor.css
+  - assets/web/css/custom.css
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
 extra_javascript:
+  # - overrides/extras.js
+  - assets/web/js/custom.js
   - assets/web/js/highlight_init.min.js
   - assets/web/js/highlight_init.js
   - https://buttons.github.io/buttons.js
