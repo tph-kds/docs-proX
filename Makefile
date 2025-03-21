@@ -1,4 +1,4 @@
 
 .PHONY: docs
 docs:
-	uv run mkdocs serve -f docs/mkdocs.yaml
+	uv run mkdocs serve 

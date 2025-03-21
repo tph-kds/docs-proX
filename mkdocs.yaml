@@ -1,0 +1,147 @@
+site_name: API_Docs of Docs_Pro
+site_description: This is a docs showcase opendocs for docs_pro site_description
+
+site_url: https://docs.docs-proX.com
+repo_url: https://github.com/tph-kds/docs-proX
+repo_name: tph-kds/docs-proX
+# edit_uri_template: <<<
+# copyright: Copyright 2025 from ntno, All rights reserved
+site_author: tph-kds
+docs_dir: docs/docs
+
+nav:
+    - Home: 'index.md'
+    - Setup & Installation:
+      - "Installation": "setup/installation.md"
+      - "Docker Deployment": "setup/docker-deployment.md"
+    - "Quick Start": "quick_start/quick_start.md"
+    - "Blog & Changelog":
+      - "Blog Home": "blog/index.md"
+      - "Changelog": "https://github.com/unclecode/crawl4ai/blob/main/CHANGELOG.md"
+    - Releases: 'releases.md'
+
+## deploy settings
+theme:
+  name: 'terminal'
+  # custom_dir: 'docs/theme_overrides'
+  # palette: 
+  #   - scheme: default
+  #     toggle:
+  #       icon: material/brightness-7
+  #       name: Switch to dark mode
+  #   - scheme: slate
+  #     toggle:
+  #       icon: material/brightness-4
+  #       name: Switch to light mode
+  # icon:
+  #   repo: fontawesome/brands/github
+  # features:
+  #   - navigation.side.indexes
+  #   - navigation.instant.progress
+  #   - navigation.instant.preview
+  #   - navigation.tracking
+  #   - navigation.tabs
+  #   - navigation.tabs.sticky
+  #   - navigation.sections
+  #   - navigation.expand
+  #   - navigation.indexes
+  #   - navigation.top
+  #   - search.suggest
+  #   - search.highlight
+  #   - search.share
+  #   - toc.float
+  #   - toc.integrate
+  #   - content.code.copy
+  #   - footer.prev_next
+  #   - navigation.side.hide
+  #   - navigation.side.indexes
+  #   - navigation.side.toc.hide
+  #   - navigation.top.hide
+  #   - navigation.top.cursor_animation.hide
+  #   - navigation.top.search_button.hide
+  #   - revision.date
+  #   - revision.history
+  #   - style.links.underline.hide
+  static_templates:
+    - 404.html
+    - about/coverage-report/index.html
+
+markdown_extensions:
+  # Python Markdown  
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - toc:
+      permalink: '#'
+      permalink_title: Anchor link to this section for reference
+
+  # PyMdown Extensions
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.snippets:
+      base_path: 
+        - docs
+  - pymdownx.blocks.details:
+      types:
+        - name: info
+          class: terminal-alert
+          title: Info
+        - name: warning
+          class: 'terminal-alert terminal-alert-error'
+          title: Warning
+        - name: important
+          class: 'terminal-alert terminal-alert-primary'
+          title: Important
+  - pymdownx.snippets
+  - pymdownx.superfences
+  #     line_spans: __span
+  #     pygments_lang_class: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - tables
+
+  - pymdownx.highlight:
+      use_pygments: true         # use pygments library    
+      pygments_style: default    # use 'default' style
+      noclasses: true            # update HTML style attr
+  - pymdownx.inlinehilite        # style inline code
+
+
+plugins:
+  - md-to-html
+  - git-revision-date
+  - search
+  - exclude-search:      
+      exclude:
+        - overrides
+        - about/coverage-report/*
+        - config/palettes/*
+        - elements/examples/*
+      ignore:
+        - config/palettes/index.md#theme-color-palettes
+        - config/palettes/dark.md#dark-palette
+        - config/palettes/default.md#default-palette
+        - config/palettes/gruvbox-dark.md#gruvbox-dark-palette
+        - config/palettes/pink.md#pink-palette
+        - config/palettes/sans-dark.md#sans-dark-palette
+        - config/palettes/sans.md#sans-palette
+  # - macros:
+  #     modules: 
+  #       - mkdocs-terminal:terminal.pluglets.tile_grid.main
+
+
+extra_css:
+  # - overrides/extras.css
+  - assets/web/css/styles.css
+  - assets/web/css/dmvendor.css
+extra_javascript:
+  - assets/web/js/highlight_init.min.js
+  - assets/web/js/highlight_init.js
+  - https://buttons.github.io/buttons.js
