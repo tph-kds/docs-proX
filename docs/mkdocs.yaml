@@ -1,62 +1,22 @@
 site_name: API_Docs of Docs_Pro
-# description: This is a docs showcase opendocs for docs_pro
+site_description: This is a docs showcase opendocs for docs_pro site_description
 
-# site_url: ./docs
-# repo_url: ./docs
-edit_uri_template: <<<
+site_url: https://docs.docs-proX.com
+repo_url: https://github.com/tph-kds/docs-proX
+repo_name: tph-kds/docs-proX
+# edit_uri_template: <<<
 # copyright: Copyright 2025 from ntno, All rights reserved
-site_author: aiprfx
+site_author: tph-kds
+docs_dir: docs
 
 nav:
     - Home: 'index.md'
     - Config:
-      - Index: 'config/index.md'
-      - Color Palettes: 
-        - Index: 'config/palettes/index.md'
-        # - Default: 'config/palettes/default.md'
-        # - Gruvbox Dark: 'config/palettes/gruvbox-dark.md'
-        # - Dark: 'config/palettes/dark.md'
-        # - Pink: 'config/palettes/pink.md'
-        # - Sans: 'config/palettes/sans.md'
-        # - Sans Dark: 'config/palettes/sans-dark.md'
-      # - Code Highlighting:
-      #   - Index: 'config/code_highlighting/index.md'
-      # - Features: 'config/features.md'
-      # - Blocks: 'config/blocks.md'
-      # - Plugins: 'config/plugins/index.md'
-      # - '___Git Revision': 'config/plugins/git-revision.md'
-      # - '___Macros': 'config/plugins/macros.md'
-      # - '___Search': 'config/plugins/search.md'      
-      # - Extensions: 'config/extensions/index.md'
-      # - Markdown Extensions: 'config/extensions/python-markdown.md'
-      # - PyMdown Extensions: 'config/extensions/pymdown-extensions.md'
-      # - '___Snippets': 'config/extensions/snippets.md'
-    # - Navigation:
-    #     - Section Indexes: 'navigation/section-indexes.md'
-    #     - Table of Contents: 'navigation/toc.md'
-    # - Tile Grid:
-    #   - Index: 'tile-grid/index.md'
-    #   - Tile Reference: 'tile-grid/tile.md'
-    #   - Grid Reference: 'tile-grid/grid.md'
-    #   - Pluglet Reference: 'tile-grid/pluglet.md'
-    #   - Example: 'tile-grid/examples/example-page.md'
-    #   - Image Only: 'tile-grid/examples/images-only.md'
-    #   - Link Only: 'tile-grid/examples/links-only.md'
-    #   - Override Styling: 'tile-grid/examples/override-styling.md'
-    #   - Inline Example: 'tile-grid/examples/inline.md'
+      - "Index": 'config/index.md'
+      - "Color Palettes": 
+        - "Index": 'config/palettes/index.md'
     - Elements:
-    #   - Blockquotes: 'elements/blockquotes.md'
-    #   - Buttons: 'elements/buttons.md'
-      - Code: 'elements/code.md'
-    #   - Definitions: 'elements/definitions.md'
-    #   - Details: 'elements/details.md'
-    #   - Figures: 'elements/figure.md'
-    #   - Footnotes: 'elements/footnotes.md'
-    #   - Links: 'elements/links.md'
-    #   - Lists: 'elements/lists.md'
-    #   - Tables: 'elements/table.md'
-    #   - Tooltips: 'elements/tooltips.md'
-    #   - Typography: 'elements/typography.md'
+      - "Code": 'elements/code.md'
     - Install: 'install.md'
     - Releases: 'releases.md'
 
@@ -103,6 +63,7 @@ markdown_extensions:
       noclasses: true            # update HTML style attr
   - pymdownx.inlinehilite        # style inline code
 
+
 plugins:
   - md-to-html
   - git-revision-date
@@ -138,8 +99,9 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
   features:
-    - footer.prev_next
     - navigation.side.indexes
     - navigation.instant.progress
     - navigation.instant.preview
@@ -156,7 +118,7 @@ theme:
     - toc.float
     - toc.integrate
     - content.code.copy
-        - footer.prev_next
+    - footer.prev_next
     - navigation.side.hide
     - navigation.side.indexes
     - navigation.side.toc.hide

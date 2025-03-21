@@ -173,4 +173,6 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+### local source
 templates/*
+note.md
