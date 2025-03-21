@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.7.0">
+    
+    <meta name="description" content="This is a docs showcase opendocs for docs_pro site_description"> 
+    
+    <meta name="author" content="tph-kds"> 
+    
+    <link rel="canonical" href="https://docs.docs-proX.com/quick_start/quick_start/"><link rel="icon" type="image/png" sizes="192x192" href="../../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>Quick Start - API_Docs of Docs_Pro</title>
+
+
+<link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../../css/normalize.css" rel="stylesheet">
+<link href="../../css/terminal.css" rel="stylesheet">
+<link href="../../css/theme.css" rel="stylesheet">
+<link href="../../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../../css/theme.footer.css" rel="stylesheet">
+<!-- default color palette -->
+<link href="../../css/palettes/default.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+    
+    <link href="../../assets/web/css/styles.css" rel="stylesheet"> 
+    <link href="../../assets/web/css/dmvendor.css" rel="stylesheet"> 
+    <link href="../../assets/web/css/custom.css" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
+    
+    
+
+    
+    <!-- search css support -->
+<link href="../../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "../..",
+    shortcuts = "{}";
+</script>
+<script src="../../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../../js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="../../assets/web/js/custom.js"></script>
+    
+    <script src="../../assets/web/js/highlight_init.min.js"></script>
+    
+    <script src="../../assets/web/js/highlight_init.js"></script>
+    
+    <script src="https://buttons.github.io/buttons.js"></script>
+    
+    <script src="../../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="https://docs.docs-proX.com/" class="no-style">API_Docs of Docs_Pro</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../.." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="./" class="menu-item active" property="item" typeof="WebPage">
+                        <span property="name">Quick Start</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../../releases.md" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Releases</span>
+                    </a>
+                    <meta property="position" content="2">
+                </li>
+                
+                    
+                    
+
+
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="3">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../..">Home</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Setup & Installation</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../setup/installation/">Installation</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../setup/docker-deployment/">Docker Deployment</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        <span class="
+
+    terminal-mkdocs-side-nav-item--active">Quick Start</span>
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Blog & Changelog</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../blog/">Blog Home</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="https://github.com/unclecode/crawl4ai/blob/main/CHANGELOG.md">Changelog</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../releases.md">Releases</a>
+        
+    
+    
+    
+  </li>
+        
+    </ul>
+  
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#getting-started-with-crawl4ai">Getting Started with Crawl4AI</a></li>
+        <li><a href="#1-introduction">1. Introduction</a></li><li><a href="#2-your-first-crawl">2. Your First Crawl</a></li><li><a href="#3-basic-configuration-light-introduction">3. Basic Configuration (Light Introduction)</a></li><li><a href="#4-generating-markdown-output">4. Generating Markdown Output</a></li><li><a href="#5-simple-data-extraction-css-based">5. Simple Data Extraction (CSS-based)</a></li><li><a href="#6-simple-data-extraction-llm-based">6. Simple Data Extraction (LLM-based)</a></li><li><a href="#7-multi-url-concurrency-preview">7. Multi-URL Concurrency (Preview)</a></li><li><a href="#8-dynamic-content-example">8. Dynamic Content Example</a></li><li><a href="#9-next-steps">9. Next Steps</a></li>
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+    
+    
+    
+    
+    
+
+<section id="mkdocs-terminal-content">
+    <h1 id="getting-started-with-crawl4ai">Getting Started with Crawl4AI<a class="headerlink" href="#getting-started-with-crawl4ai" title="Anchor link to this section for reference">#</a></h1>
+<p>Welcome to <strong>Crawl4AI</strong>, an open-source LLM-friendly Web Crawler &amp; Scraper. In this tutorial, you’ll:</p>
+<ol>
+<li>Run your <strong>first crawl</strong> using minimal configuration.  </li>
+<li>Generate <strong>Markdown</strong> output (and learn how it’s influenced by content filters).  </li>
+<li>Experiment with a simple <strong>CSS-based extraction</strong> strategy.  </li>
+<li>See a glimpse of <strong>LLM-based extraction</strong> (including open-source and closed-source model options).  </li>
+<li>Crawl a <strong>dynamic</strong> page that loads content via JavaScript.</li>
+</ol>
+<hr />
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Anchor link to this section for reference">#</a></h2>
+<p>Crawl4AI provides:</p>
+<ul>
+<li>An asynchronous crawler, <strong><code>AsyncWebCrawler</code></strong>.  </li>
+<li>Configurable browser and run settings via <strong><code>BrowserConfig</code></strong> and <strong><code>CrawlerRunConfig</code></strong>.  </li>
+<li>Automatic HTML-to-Markdown conversion via <strong><code>DefaultMarkdownGenerator</code></strong> (supports optional filters).  </li>
+<li>Multiple extraction strategies (LLM-based or “traditional” CSS/XPath-based).</li>
+</ul>
+<p>By the end of this guide, you’ll have performed a basic crawl, generated Markdown, tried out two extraction strategies, and crawled a dynamic page that uses “Load More” buttons or JavaScript updates.</p>
+<hr />
+<h2 id="2-your-first-crawl">2. Your First Crawl<a class="headerlink" href="#2-your-first-crawl" title="Anchor link to this section for reference">#</a></h2>
+<p>Here’s a minimal Python script that creates an <strong><code>AsyncWebCrawler</code></strong>, fetches a webpage, and prints the first 300 characters of its Markdown output:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">asyncio</span>
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> AsyncWebCrawler
+
+<span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">main</span>():
+    <span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">with</span> AsyncWebCrawler() <span style="color: #008000; font-weight: bold">as</span> crawler:
+        result <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">await</span> crawler<span style="color: #666">.</span>arun(<span style="color: #BA2121">&quot;https://example.com&quot;</span>)
+        <span style="color: #008000">print</span>(result<span style="color: #666">.</span>markdown[:<span style="color: #666">300</span>])  <span style="color: #3D7B7B; font-style: italic"># Print first 300 chars</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #19177C">__name__</span> <span style="color: #666">==</span> <span style="color: #BA2121">&quot;__main__&quot;</span>:
+    asyncio<span style="color: #666">.</span>run(main())
+</code></pre></div>
+<p><strong>What’s happening?</strong>
+- <strong><code>AsyncWebCrawler</code></strong> launches a headless browser (Chromium by default).
+- It fetches <code>https://example.com</code>.
+- Crawl4AI automatically converts the HTML into Markdown.</p>
+<p>You now have a simple, working crawl!</p>
+<hr />
+<h2 id="3-basic-configuration-light-introduction">3. Basic Configuration (Light Introduction)<a class="headerlink" href="#3-basic-configuration-light-introduction" title="Anchor link to this section for reference">#</a></h2>
+<p>Crawl4AI’s crawler can be heavily customized using two main classes:</p>
+<p>1. <strong><code>BrowserConfig</code></strong>: Controls browser behavior (headless or full UI, user agent, JavaScript toggles, etc.).<br />
+2. <strong><code>CrawlerRunConfig</code></strong>: Controls how each crawl runs (caching, extraction, timeouts, hooking, etc.).</p>
+<p>Below is an example with minimal usage:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">asyncio</span>
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+
+<span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">main</span>():
+    browser_conf <span style="color: #666">=</span> BrowserConfig(headless<span style="color: #666">=</span><span style="color: #008000; font-weight: bold">True</span>)  <span style="color: #3D7B7B; font-style: italic"># or False to see the browser</span>
+    run_conf <span style="color: #666">=</span> CrawlerRunConfig(
+        cache_mode<span style="color: #666">=</span>CacheMode<span style="color: #666">.</span>BYPASS
+    )
+
+    <span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">with</span> AsyncWebCrawler(config<span style="color: #666">=</span>browser_conf) <span style="color: #008000; font-weight: bold">as</span> crawler:
+        result <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">await</span> crawler<span style="color: #666">.</span>arun(
+            url<span style="color: #666">=</span><span style="color: #BA2121">&quot;https://example.com&quot;</span>,
+            config<span style="color: #666">=</span>run_conf
+        )
+        <span style="color: #008000">print</span>(result<span style="color: #666">.</span>markdown)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #19177C">__name__</span> <span style="color: #666">==</span> <span style="color: #BA2121">&quot;__main__&quot;</span>:
+    asyncio<span style="color: #666">.</span>run(main())
+</code></pre></div>
+<blockquote>
+<p>IMPORTANT: By default cache mode is set to <code>CacheMode.ENABLED</code>. So to have fresh content, you need to set it to <code>CacheMode.BYPASS</code></p>
+</blockquote>
+<p>We’ll explore more advanced config in later tutorials (like enabling proxies, PDF output, multi-tab sessions, etc.). For now, just note how you pass these objects to manage crawling.</p>
+<hr />
+<h2 id="4-generating-markdown-output">4. Generating Markdown Output<a class="headerlink" href="#4-generating-markdown-output" title="Anchor link to this section for reference">#</a></h2>
+<p>By default, Crawl4AI automatically generates Markdown from each crawled page. However, the exact output depends on whether you specify a <strong>markdown generator</strong> or <strong>content filter</strong>.</p>
+<ul>
+<li><strong><code>result.markdown</code></strong>:<br />
+  The direct HTML-to-Markdown conversion.  </li>
+<li><strong><code>result.markdown.fit_markdown</code></strong>:<br />
+  The same content after applying any configured <strong>content filter</strong> (e.g., <code>PruningContentFilter</code>).</li>
+</ul>
+<h3 id="example-using-a-filter-with-defaultmarkdowngenerator">Example: Using a Filter with <code>DefaultMarkdownGenerator</code><a class="headerlink" href="#example-using-a-filter-with-defaultmarkdowngenerator" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> AsyncWebCrawler, CrawlerRunConfig
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai.content_filter_strategy</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> PruningContentFilter
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai.markdown_generation_strategy</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> DefaultMarkdownGenerator
+
+md_generator <span style="color: #666">=</span> DefaultMarkdownGenerator(
+    content_filter<span style="color: #666">=</span>PruningContentFilter(threshold<span style="color: #666">=0.4</span>, threshold_type<span style="color: #666">=</span><span style="color: #BA2121">&quot;fixed&quot;</span>)
+)
+
+config <span style="color: #666">=</span> CrawlerRunConfig(
+    cache_mode<span style="color: #666">=</span>CacheMode<span style="color: #666">.</span>BYPASS,
+    markdown_generator<span style="color: #666">=</span>md_generator
+)
+
+<span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">with</span> AsyncWebCrawler() <span style="color: #008000; font-weight: bold">as</span> crawler:
+    result <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">await</span> crawler<span style="color: #666">.</span>arun(<span style="color: #BA2121">&quot;https://news.ycombinator.com&quot;</span>, config<span style="color: #666">=</span>config)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Raw Markdown length:&quot;</span>, <span style="color: #008000">len</span>(result<span style="color: #666">.</span>markdown<span style="color: #666">.</span>raw_markdown))
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Fit Markdown length:&quot;</span>, <span style="color: #008000">len</span>(result<span style="color: #666">.</span>markdown<span style="color: #666">.</span>fit_markdown))
+</code></pre></div>
+<p><strong>Note</strong>: If you do <strong>not</strong> specify a content filter or markdown generator, you’ll typically see only the raw Markdown. <code>PruningContentFilter</code> may adds around <code>50ms</code> in processing time. We’ll dive deeper into these strategies in a dedicated <strong>Markdown Generation</strong> tutorial.</p>
+<hr />
+<h2 id="5-simple-data-extraction-css-based">5. Simple Data Extraction (CSS-based)<a class="headerlink" href="#5-simple-data-extraction-css-based" title="Anchor link to this section for reference">#</a></h2>
+<p>Crawl4AI can also extract structured data (JSON) using CSS or XPath selectors. Below is a minimal CSS-based example:</p>
+<blockquote>
+<p><strong>New!</strong> Crawl4AI now provides a powerful utility to automatically generate extraction schemas using LLM. This is a one-time cost that gives you a reusable schema for fast, LLM-free extractions:</p>
+</blockquote>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai.extraction_strategy</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> JsonCssExtractionStrategy
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai.types</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> LLMConfig
+
+<span style="color: #3D7B7B; font-style: italic"># Generate a schema (one-time cost)</span>
+html <span style="color: #666">=</span> <span style="color: #BA2121">&quot;&lt;div class=&#39;product&#39;&gt;&lt;h2&gt;Gaming Laptop&lt;/h2&gt;&lt;span class=&#39;price&#39;&gt;$999.99&lt;/span&gt;&lt;/div&gt;&quot;</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Using OpenAI (requires API token)</span>
+schema <span style="color: #666">=</span> JsonCssExtractionStrategy<span style="color: #666">.</span>generate_schema(
+    html,
+    llm_config <span style="color: #666">=</span> LLMConfig(provider<span style="color: #666">=</span><span style="color: #BA2121">&quot;openai/gpt-4o&quot;</span>,api_token<span style="color: #666">=</span><span style="color: #BA2121">&quot;your-openai-token&quot;</span>)  <span style="color: #3D7B7B; font-style: italic"># Required for OpenAI</span>
+)
+
+<span style="color: #3D7B7B; font-style: italic"># Or using Ollama (open source, no token needed)</span>
+schema <span style="color: #666">=</span> JsonCssExtractionStrategy<span style="color: #666">.</span>generate_schema(
+    html,
+    llm_config <span style="color: #666">=</span> LLMConfig(provider<span style="color: #666">=</span><span style="color: #BA2121">&quot;ollama/llama3.3&quot;</span>, api_token<span style="color: #666">=</span><span style="color: #008000; font-weight: bold">None</span>)  <span style="color: #3D7B7B; font-style: italic"># Not needed for Ollama</span>
+)
+
+<span style="color: #3D7B7B; font-style: italic"># Use the schema for fast, repeated extractions</span>
+strategy <span style="color: #666">=</span> JsonCssExtractionStrategy(schema)
+</code></pre></div>
+<p>For a complete guide on schema generation and advanced usage, see <a href="../extraction/no-llm-strategies.md">No-LLM Extraction Strategies</a>.</p>
+<p>Here's a basic extraction example:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">asyncio</span>
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">json</span>
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> AsyncWebCrawler, CrawlerRunConfig, CacheMode
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai.extraction_strategy</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> JsonCssExtractionStrategy
+
+<span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">main</span>():
+    schema <span style="color: #666">=</span> {
+        <span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;Example Items&quot;</span>,
+        <span style="color: #BA2121">&quot;baseSelector&quot;</span>: <span style="color: #BA2121">&quot;div.item&quot;</span>,
+        <span style="color: #BA2121">&quot;fields&quot;</span>: [
+            {<span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;title&quot;</span>, <span style="color: #BA2121">&quot;selector&quot;</span>: <span style="color: #BA2121">&quot;h2&quot;</span>, <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;text&quot;</span>},
+            {<span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;link&quot;</span>, <span style="color: #BA2121">&quot;selector&quot;</span>: <span style="color: #BA2121">&quot;a&quot;</span>, <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;attribute&quot;</span>, <span style="color: #BA2121">&quot;attribute&quot;</span>: <span style="color: #BA2121">&quot;href&quot;</span>}
+        ]
+    }
+
+    raw_html <span style="color: #666">=</span> <span style="color: #BA2121">&quot;&lt;div class=&#39;item&#39;&gt;&lt;h2&gt;Item 1&lt;/h2&gt;&lt;a href=&#39;https://example.com/item1&#39;&gt;Link 1&lt;/a&gt;&lt;/div&gt;&quot;</span>
+
+    <span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">with</span> AsyncWebCrawler() <span style="color: #008000; font-weight: bold">as</span> crawler:
+        result <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">await</span> crawler<span style="color: #666">.</span>arun(
+            url<span style="color: #666">=</span><span style="color: #BA2121">&quot;raw://&quot;</span> <span style="color: #666">+</span> raw_html,
+            config<span style="color: #666">=</span>CrawlerRunConfig(
+                cache_mode<span style="color: #666">=</span>CacheMode<span style="color: #666">.</span>BYPASS,
+                extraction_strategy<span style="color: #666">=</span>JsonCssExtractionStrategy(schema)
+            )
+        )
+        <span style="color: #3D7B7B; font-style: italic"># The JSON output is stored in &#39;extracted_content&#39;</span>
+        data <span style="color: #666">=</span> json<span style="color: #666">.</span>loads(result<span style="color: #666">.</span>extracted_content)
+        <span style="color: #008000">print</span>(data)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #19177C">__name__</span> <span style="color: #666">==</span> <span style="color: #BA2121">&quot;__main__&quot;</span>:
+    asyncio<span style="color: #666">.</span>run(main())
+</code></pre></div>
+<p><strong>Why is this helpful?</strong>
+- Great for repetitive page structures (e.g., item listings, articles).
+- No AI usage or costs.
+- The crawler returns a JSON string you can parse or store.</p>
+<blockquote>
+<p>Tips: You can pass raw HTML to the crawler instead of a URL. To do so, prefix the HTML with <code>raw://</code>.</p>
+</blockquote>
+<hr />
+<h2 id="6-simple-data-extraction-llm-based">6. Simple Data Extraction (LLM-based)<a class="headerlink" href="#6-simple-data-extraction-llm-based" title="Anchor link to this section for reference">#</a></h2>
+<p>For more complex or irregular pages, a language model can parse text intelligently into a structure you define. Crawl4AI supports <strong>open-source</strong> or <strong>closed-source</strong> providers:</p>
+<ul>
+<li><strong>Open-Source Models</strong> (e.g., <code>ollama/llama3.3</code>, <code>no_token</code>)  </li>
+<li><strong>OpenAI Models</strong> (e.g., <code>openai/gpt-4</code>, requires <code>api_token</code>)  </li>
+<li>Or any provider supported by the underlying library</li>
+</ul>
+<p>Below is an example using <strong>open-source</strong> style (no token) and closed-source:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">os</span>
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">json</span>
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">asyncio</span>
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">pydantic</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> BaseModel, Field
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> AsyncWebCrawler, CrawlerRunConfig, LLMConfig
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai.extraction_strategy</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> LLMExtractionStrategy
+
+<span style="color: #008000; font-weight: bold">class</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">OpenAIModelFee</span>(BaseModel):
+    model_name: <span style="color: #008000">str</span> <span style="color: #666">=</span> Field(<span style="color: #666">...</span>, description<span style="color: #666">=</span><span style="color: #BA2121">&quot;Name of the OpenAI model.&quot;</span>)
+    input_fee: <span style="color: #008000">str</span> <span style="color: #666">=</span> Field(<span style="color: #666">...</span>, description<span style="color: #666">=</span><span style="color: #BA2121">&quot;Fee for input token for the OpenAI model.&quot;</span>)
+    output_fee: <span style="color: #008000">str</span> <span style="color: #666">=</span> Field(
+        <span style="color: #666">...</span>, description<span style="color: #666">=</span><span style="color: #BA2121">&quot;Fee for output token for the OpenAI model.&quot;</span>
+    )
+
+<span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">extract_structured_data_using_llm</span>(
+    provider: <span style="color: #008000">str</span>, api_token: <span style="color: #008000">str</span> <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">None</span>, extra_headers: Dict[<span style="color: #008000">str</span>, <span style="color: #008000">str</span>] <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">None</span>
+):
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;</span><span style="color: #AA5D1F; font-weight: bold">\n</span><span style="color: #BA2121">--- Extracting Structured Data with </span><span style="color: #A45A77; font-weight: bold">{</span>provider<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121"> ---&quot;</span>)
+
+    <span style="color: #008000; font-weight: bold">if</span> api_token <span style="color: #A2F; font-weight: bold">is</span> <span style="color: #008000; font-weight: bold">None</span> <span style="color: #A2F; font-weight: bold">and</span> provider <span style="color: #666">!=</span> <span style="color: #BA2121">&quot;ollama&quot;</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;API token is required for </span><span style="color: #A45A77; font-weight: bold">{</span>provider<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">. Skipping this example.&quot;</span>)
+        <span style="color: #008000; font-weight: bold">return</span>
+
+    browser_config <span style="color: #666">=</span> BrowserConfig(headless<span style="color: #666">=</span><span style="color: #008000; font-weight: bold">True</span>)
+
+    extra_args <span style="color: #666">=</span> {<span style="color: #BA2121">&quot;temperature&quot;</span>: <span style="color: #666">0</span>, <span style="color: #BA2121">&quot;top_p&quot;</span>: <span style="color: #666">0.9</span>, <span style="color: #BA2121">&quot;max_tokens&quot;</span>: <span style="color: #666">2000</span>}
+    <span style="color: #008000; font-weight: bold">if</span> extra_headers:
+        extra_args[<span style="color: #BA2121">&quot;extra_headers&quot;</span>] <span style="color: #666">=</span> extra_headers
+
+    crawler_config <span style="color: #666">=</span> CrawlerRunConfig(
+        cache_mode<span style="color: #666">=</span>CacheMode<span style="color: #666">.</span>BYPASS,
+        word_count_threshold<span style="color: #666">=1</span>,
+        page_timeout<span style="color: #666">=80000</span>,
+        extraction_strategy<span style="color: #666">=</span>LLMExtractionStrategy(
+            llm_config <span style="color: #666">=</span> LLMConfig(provider<span style="color: #666">=</span>provider,api_token<span style="color: #666">=</span>api_token),
+            schema<span style="color: #666">=</span>OpenAIModelFee<span style="color: #666">.</span>model_json_schema(),
+            extraction_type<span style="color: #666">=</span><span style="color: #BA2121">&quot;schema&quot;</span>,
+            instruction<span style="color: #666">=</span><span style="color: #BA2121">&quot;&quot;&quot;From the crawled content, extract all mentioned model names along with their fees for input and output tokens. </span>
+<span style="color: #BA2121">            Do not miss any models in the entire content.&quot;&quot;&quot;</span>,
+            extra_args<span style="color: #666">=</span>extra_args,
+        ),
+    )
+
+    <span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">with</span> AsyncWebCrawler(config<span style="color: #666">=</span>browser_config) <span style="color: #008000; font-weight: bold">as</span> crawler:
+        result <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">await</span> crawler<span style="color: #666">.</span>arun(
+            url<span style="color: #666">=</span><span style="color: #BA2121">&quot;https://openai.com/api/pricing/&quot;</span>, config<span style="color: #666">=</span>crawler_config
+        )
+        <span style="color: #008000">print</span>(result<span style="color: #666">.</span>extracted_content)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #19177C">__name__</span> <span style="color: #666">==</span> <span style="color: #BA2121">&quot;__main__&quot;</span>:
+
+    asyncio<span style="color: #666">.</span>run(
+        extract_structured_data_using_llm(
+            provider<span style="color: #666">=</span><span style="color: #BA2121">&quot;openai/gpt-4o&quot;</span>, api_token<span style="color: #666">=</span>os<span style="color: #666">.</span>getenv(<span style="color: #BA2121">&quot;OPENAI_API_KEY&quot;</span>)
+        )
+    )
+</code></pre></div>
+<p><strong>What’s happening?</strong>
+- We define a Pydantic schema (<code>PricingInfo</code>) describing the fields we want.
+- The LLM extraction strategy uses that schema and your instructions to transform raw text into structured JSON.
+- Depending on the <strong>provider</strong> and <strong>api_token</strong>, you can use local models or a remote API.</p>
+<hr />
+<h2 id="7-multi-url-concurrency-preview">7. Multi-URL Concurrency (Preview)<a class="headerlink" href="#7-multi-url-concurrency-preview" title="Anchor link to this section for reference">#</a></h2>
+<p>If you need to crawl multiple URLs in <strong>parallel</strong>, you can use <code>arun_many()</code>. By default, Crawl4AI employs a <strong>MemoryAdaptiveDispatcher</strong>, automatically adjusting concurrency based on system resources. Here’s a quick glimpse:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">asyncio</span>
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> AsyncWebCrawler, CrawlerRunConfig, CacheMode
+
+<span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">quick_parallel_example</span>():
+    urls <span style="color: #666">=</span> [
+        <span style="color: #BA2121">&quot;https://example.com/page1&quot;</span>,
+        <span style="color: #BA2121">&quot;https://example.com/page2&quot;</span>,
+        <span style="color: #BA2121">&quot;https://example.com/page3&quot;</span>
+    ]
+
+    run_conf <span style="color: #666">=</span> CrawlerRunConfig(
+        cache_mode<span style="color: #666">=</span>CacheMode<span style="color: #666">.</span>BYPASS,
+        stream<span style="color: #666">=</span><span style="color: #008000; font-weight: bold">True</span>  <span style="color: #3D7B7B; font-style: italic"># Enable streaming mode</span>
+    )
+
+    <span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">with</span> AsyncWebCrawler() <span style="color: #008000; font-weight: bold">as</span> crawler:
+        <span style="color: #3D7B7B; font-style: italic"># Stream results as they complete</span>
+        <span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">for</span> result <span style="color: #A2F; font-weight: bold">in</span> <span style="color: #008000; font-weight: bold">await</span> crawler<span style="color: #666">.</span>arun_many(urls, config<span style="color: #666">=</span>run_conf):
+            <span style="color: #008000; font-weight: bold">if</span> result<span style="color: #666">.</span>success:
+                <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;[OK] </span><span style="color: #A45A77; font-weight: bold">{</span>result<span style="color: #666">.</span>url<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">, length: </span><span style="color: #A45A77; font-weight: bold">{</span><span style="color: #008000">len</span>(result<span style="color: #666">.</span>markdown<span style="color: #666">.</span>raw_markdown)<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>)
+            <span style="color: #008000; font-weight: bold">else</span>:
+                <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;[ERROR] </span><span style="color: #A45A77; font-weight: bold">{</span>result<span style="color: #666">.</span>url<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121"> =&gt; </span><span style="color: #A45A77; font-weight: bold">{</span>result<span style="color: #666">.</span>error_message<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>)
+
+        <span style="color: #3D7B7B; font-style: italic"># Or get all results at once (default behavior)</span>
+        run_conf <span style="color: #666">=</span> run_conf<span style="color: #666">.</span>clone(stream<span style="color: #666">=</span><span style="color: #008000; font-weight: bold">False</span>)
+        results <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">await</span> crawler<span style="color: #666">.</span>arun_many(urls, config<span style="color: #666">=</span>run_conf)
+        <span style="color: #008000; font-weight: bold">for</span> res <span style="color: #A2F; font-weight: bold">in</span> results:
+            <span style="color: #008000; font-weight: bold">if</span> res<span style="color: #666">.</span>success:
+                <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;[OK] </span><span style="color: #A45A77; font-weight: bold">{</span>res<span style="color: #666">.</span>url<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">, length: </span><span style="color: #A45A77; font-weight: bold">{</span><span style="color: #008000">len</span>(res<span style="color: #666">.</span>markdown<span style="color: #666">.</span>raw_markdown)<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>)
+            <span style="color: #008000; font-weight: bold">else</span>:
+                <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;[ERROR] </span><span style="color: #A45A77; font-weight: bold">{</span>res<span style="color: #666">.</span>url<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121"> =&gt; </span><span style="color: #A45A77; font-weight: bold">{</span>res<span style="color: #666">.</span>error_message<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #19177C">__name__</span> <span style="color: #666">==</span> <span style="color: #BA2121">&quot;__main__&quot;</span>:
+    asyncio<span style="color: #666">.</span>run(quick_parallel_example())
+</code></pre></div>
+<p>The example above shows two ways to handle multiple URLs:
+1. <strong>Streaming mode</strong> (<code>stream=True</code>): Process results as they become available using <code>async for</code>
+2. <strong>Batch mode</strong> (<code>stream=False</code>): Wait for all results to complete</p>
+<p>For more advanced concurrency (e.g., a <strong>semaphore-based</strong> approach, <strong>adaptive memory usage throttling</strong>, or customized rate limiting), see <a href="../advanced/multi-url-crawling.md">Advanced Multi-URL Crawling</a>.</p>
+<hr />
+<h2 id="8-dynamic-content-example">8. Dynamic Content Example<a class="headerlink" href="#8-dynamic-content-example" title="Anchor link to this section for reference">#</a></h2>
+<p>Some sites require multiple “page clicks” or dynamic JavaScript updates. Below is an example showing how to <strong>click</strong> a “Next Page” button and wait for new commits to load on GitHub, using <strong><code>BrowserConfig</code></strong> and <strong><code>CrawlerRunConfig</code></strong>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">asyncio</span>
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">crawl4ai.extraction_strategy</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> JsonCssExtractionStrategy
+
+<span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">extract_structured_data_using_css_extractor</span>():
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;</span><span style="color: #AA5D1F; font-weight: bold">\n</span><span style="color: #BA2121">--- Using JsonCssExtractionStrategy for Fast Structured Output ---&quot;</span>)
+    schema <span style="color: #666">=</span> {
+        <span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;KidoCode Courses&quot;</span>,
+        <span style="color: #BA2121">&quot;baseSelector&quot;</span>: <span style="color: #BA2121">&quot;section.charge-methodology .w-tab-content &gt; div&quot;</span>,
+        <span style="color: #BA2121">&quot;fields&quot;</span>: [
+            {
+                <span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;section_title&quot;</span>,
+                <span style="color: #BA2121">&quot;selector&quot;</span>: <span style="color: #BA2121">&quot;h3.heading-50&quot;</span>,
+                <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;text&quot;</span>,
+            },
+            {
+                <span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;section_description&quot;</span>,
+                <span style="color: #BA2121">&quot;selector&quot;</span>: <span style="color: #BA2121">&quot;.charge-content&quot;</span>,
+                <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;text&quot;</span>,
+            },
+            {
+                <span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;course_name&quot;</span>,
+                <span style="color: #BA2121">&quot;selector&quot;</span>: <span style="color: #BA2121">&quot;.text-block-93&quot;</span>,
+                <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;text&quot;</span>,
+            },
+            {
+                <span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;course_description&quot;</span>,
+                <span style="color: #BA2121">&quot;selector&quot;</span>: <span style="color: #BA2121">&quot;.course-content-text&quot;</span>,
+                <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;text&quot;</span>,
+            },
+            {
+                <span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;course_icon&quot;</span>,
+                <span style="color: #BA2121">&quot;selector&quot;</span>: <span style="color: #BA2121">&quot;.image-92&quot;</span>,
+                <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;attribute&quot;</span>,
+                <span style="color: #BA2121">&quot;attribute&quot;</span>: <span style="color: #BA2121">&quot;src&quot;</span>,
+            },
+        ],
+    }
+
+    browser_config <span style="color: #666">=</span> BrowserConfig(headless<span style="color: #666">=</span><span style="color: #008000; font-weight: bold">True</span>, java_script_enabled<span style="color: #666">=</span><span style="color: #008000; font-weight: bold">True</span>)
+
+    js_click_tabs <span style="color: #666">=</span> <span style="color: #BA2121">&quot;&quot;&quot;</span>
+<span style="color: #BA2121">    (async () =&gt; {</span>
+<span style="color: #BA2121">        const tabs = document.querySelectorAll(&quot;section.charge-methodology .tabs-menu-3 &gt; div&quot;);</span>
+<span style="color: #BA2121">        for(let tab of tabs) {</span>
+<span style="color: #BA2121">            tab.scrollIntoView();</span>
+<span style="color: #BA2121">            tab.click();</span>
+<span style="color: #BA2121">            await new Promise(r =&gt; setTimeout(r, 500));</span>
+<span style="color: #BA2121">        }</span>
+<span style="color: #BA2121">    })();</span>
+<span style="color: #BA2121">    &quot;&quot;&quot;</span>
+
+    crawler_config <span style="color: #666">=</span> CrawlerRunConfig(
+        cache_mode<span style="color: #666">=</span>CacheMode<span style="color: #666">.</span>BYPASS,
+        extraction_strategy<span style="color: #666">=</span>JsonCssExtractionStrategy(schema),
+        js_code<span style="color: #666">=</span>[js_click_tabs],
+    )
+
+    <span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">with</span> AsyncWebCrawler(config<span style="color: #666">=</span>browser_config) <span style="color: #008000; font-weight: bold">as</span> crawler:
+        result <span style="color: #666">=</span> <span style="color: #008000; font-weight: bold">await</span> crawler<span style="color: #666">.</span>arun(
+            url<span style="color: #666">=</span><span style="color: #BA2121">&quot;https://www.kidocode.com/degrees/technology&quot;</span>, config<span style="color: #666">=</span>crawler_config
+        )
+
+        companies <span style="color: #666">=</span> json<span style="color: #666">.</span>loads(result<span style="color: #666">.</span>extracted_content)
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;Successfully extracted </span><span style="color: #A45A77; font-weight: bold">{</span><span style="color: #008000">len</span>(companies)<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121"> companies&quot;</span>)
+        <span style="color: #008000">print</span>(json<span style="color: #666">.</span>dumps(companies[<span style="color: #666">0</span>], indent<span style="color: #666">=2</span>))
+
+<span style="color: #008000; font-weight: bold">async</span> <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">main</span>():
+    <span style="color: #008000; font-weight: bold">await</span> extract_structured_data_using_css_extractor()
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #19177C">__name__</span> <span style="color: #666">==</span> <span style="color: #BA2121">&quot;__main__&quot;</span>:
+    asyncio<span style="color: #666">.</span>run(main())
+</code></pre></div>
+<p><strong>Key Points</strong>:</p>
+<ul>
+<li><strong><code>BrowserConfig(headless=False)</code></strong>: We want to watch it click “Next Page.”  </li>
+<li><strong><code>CrawlerRunConfig(...)</code></strong>: We specify the extraction strategy, pass <code>session_id</code> to reuse the same page.  </li>
+<li><strong><code>js_code</code></strong> and <strong><code>wait_for</code></strong> are used for subsequent pages (<code>page &gt; 0</code>) to click the “Next” button and wait for new commits to load.  </li>
+<li><strong><code>js_only=True</code></strong> indicates we’re not re-navigating but continuing the existing session.  </li>
+<li>Finally, we call <code>kill_session()</code> to clean up the page and browser session.</li>
+</ul>
+<hr />
+<h2 id="9-next-steps">9. Next Steps<a class="headerlink" href="#9-next-steps" title="Anchor link to this section for reference">#</a></h2>
+<p>Congratulations! You have:</p>
+<ol>
+<li>Performed a basic crawl and printed Markdown.  </li>
+<li>Used <strong>content filters</strong> with a markdown generator.  </li>
+<li>Extracted JSON via <strong>CSS</strong> or <strong>LLM</strong> strategies.  </li>
+<li>Handled <strong>dynamic</strong> pages with JavaScript triggers.</li>
+</ol>
+<p>If you’re ready for more, check out:</p>
+<ul>
+<li><strong>Installation</strong>: A deeper dive into advanced installs, Docker usage (experimental), or optional dependencies.  </li>
+<li><strong>Hooks &amp; Auth</strong>: Learn how to run custom JavaScript or handle logins with cookies, local storage, etc.  </li>
+<li><strong>Deployment</strong>: Explore ephemeral testing in Docker or plan for the upcoming stable Docker release.  </li>
+<li><strong>Browser Management</strong>: Delve into user simulation, stealth modes, and concurrency best practices.  </li>
+</ul>
+<p>Crawl4AI is a powerful, flexible tool. Enjoy building out your scrapers, data pipelines, or AI-driven extraction flows. Happy crawling!</p>
+</section>
+
+<section id="mkdocs-terminal-after-content">
+    
+</section>
+
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>

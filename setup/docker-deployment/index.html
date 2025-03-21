@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.7.0">
+    
+    <meta name="description" content="This is a docs showcase opendocs for docs_pro site_description"> 
+    
+    <meta name="author" content="tph-kds"> 
+    
+    <link rel="canonical" href="https://docs.docs-proX.com/setup/docker-deployment/"><link rel="icon" type="image/png" sizes="192x192" href="../../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>Docker Deployment - API_Docs of Docs_Pro</title>
+
+
+<link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../../css/normalize.css" rel="stylesheet">
+<link href="../../css/terminal.css" rel="stylesheet">
+<link href="../../css/theme.css" rel="stylesheet">
+<link href="../../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../../css/theme.footer.css" rel="stylesheet">
+<!-- default color palette -->
+<link href="../../css/palettes/default.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+    
+    <link href="../../assets/web/css/styles.css" rel="stylesheet"> 
+    <link href="../../assets/web/css/dmvendor.css" rel="stylesheet"> 
+    <link href="../../assets/web/css/custom.css" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
+    
+    
+
+    
+    <!-- search css support -->
+<link href="../../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "../..",
+    shortcuts = "{}";
+</script>
+<script src="../../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../../js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="../../assets/web/js/custom.js"></script>
+    
+    <script src="../../assets/web/js/highlight_init.min.js"></script>
+    
+    <script src="../../assets/web/js/highlight_init.js"></script>
+    
+    <script src="https://buttons.github.io/buttons.js"></script>
+    
+    <script src="../../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="https://docs.docs-proX.com/" class="no-style">API_Docs of Docs_Pro</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../.." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../../quick_start/quick_start/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Quick Start</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../../releases.md" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Releases</span>
+                    </a>
+                    <meta property="position" content="2">
+                </li>
+                
+                    
+                    
+
+
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="3">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../..">Home</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item--active terminal-mkdocs-side-nav-section-no-index">Setup & Installation</span>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../installation/">Installation</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        <span class="
+
+    terminal-mkdocs-side-nav-item--active">Docker Deployment</span>
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../quick_start/quick_start/">Quick Start</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Blog & Changelog</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../blog/">Blog Home</a>
+        
+    
+    </li>
+            
+        
+            
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="https://github.com/unclecode/crawl4ai/blob/main/CHANGELOG.md">Changelog</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../releases.md">Releases</a>
+        
+    
+    
+    
+  </li>
+        
+    </ul>
+  
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#docker-deployment">Docker Deployment</a></li>
+        <li><a href="#quick-start">Quick Start 🚀</a></li><li><a href="#running-with-docker-compose">Running with Docker Compose 🐳</a></li><li><a href="#api-security">API Security 🔒</a></li><li><a href="#configuration-options">Configuration Options 🔧</a></li><li><a href="#usage-examples">Usage Examples 📝</a></li><li><a href="#platform-specific-instructions">Platform-Specific Instructions 💻</a></li><li><a href="#testing">Testing 🧪</a></li><li><a href="#advanced-configuration">Advanced Configuration ⚙️</a></li><li><a href="#troubleshooting">Troubleshooting 🔍</a></li><li><a href="#best-practices">Best Practices 🌟</a></li><li><a href="#api-reference">API Reference 📚</a></li>
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+    
+    
+    
+    
+    
+
+<section id="mkdocs-terminal-content">
+    <h1 id="docker-deployment">Docker Deployment<a class="headerlink" href="#docker-deployment" title="Anchor link to this section for reference">#</a></h1>
+<p>Crawl4AI provides official Docker images for easy deployment and scalability. This guide covers installation, configuration, and usage of Crawl4AI in Docker environments.</p>
+<h2 id="quick-start">Quick Start 🚀<a class="headerlink" href="#quick-start" title="Anchor link to this section for reference">#</a></h2>
+<p>Pull and run the basic version:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Basic run without security</span>
+docker<span style="color: #BBB"> </span>pull<span style="color: #BBB"> </span>unclecode/crawl4ai:basic
+docker<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>-p<span style="color: #BBB"> </span><span style="color: #666">11235</span>:11235<span style="color: #BBB"> </span>unclecode/crawl4ai:basic
+
+<span style="color: #3D7B7B; font-style: italic"># Run with API security enabled</span>
+docker<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>-p<span style="color: #BBB"> </span><span style="color: #666">11235</span>:11235<span style="color: #BBB"> </span>-e<span style="color: #BBB"> </span><span style="color: #19177C">CRAWL4AI_API_TOKEN</span><span style="color: #666">=</span>your_secret_token<span style="color: #BBB"> </span>unclecode/crawl4ai:basic
+</code></pre></div>
+<h2 id="running-with-docker-compose">Running with Docker Compose 🐳<a class="headerlink" href="#running-with-docker-compose" title="Anchor link to this section for reference">#</a></h2>
+<h3 id="use-docker-compose-from-local-dockerfile-or-docker-hub">Use Docker Compose (From Local Dockerfile or Docker Hub)<a class="headerlink" href="#use-docker-compose-from-local-dockerfile-or-docker-hub" title="Anchor link to this section for reference">#</a></h3>
+<p>Crawl4AI provides flexibility to use Docker Compose for managing your containerized services. You can either build the image locally from the provided <code>Dockerfile</code> or use the pre-built image from Docker Hub.</p>
+<h3 id="option-1-using-docker-compose-to-build-locally"><strong>Option 1: Using Docker Compose to Build Locally</strong><a class="headerlink" href="#option-1-using-docker-compose-to-build-locally" title="Anchor link to this section for reference">#</a></h3>
+<p>If you want to build the image locally, use the provided <code>docker-compose.local.yml</code> file.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker-compose<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>docker-compose.local.yml<span style="color: #BBB"> </span>up<span style="color: #BBB"> </span>-d
+</code></pre></div>
+<p>This will:
+1. Build the Docker image from the provided <code>Dockerfile</code>.
+2. Start the container and expose it on <code>http://localhost:11235</code>.</p>
+<hr />
+<h3 id="option-2-using-docker-compose-with-pre-built-image-from-hub"><strong>Option 2: Using Docker Compose with Pre-Built Image from Hub</strong><a class="headerlink" href="#option-2-using-docker-compose-with-pre-built-image-from-hub" title="Anchor link to this section for reference">#</a></h3>
+<p>If you prefer using the pre-built image on Docker Hub, use the <code>docker-compose.hub.yml</code> file.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker-compose<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>docker-compose.hub.yml<span style="color: #BBB"> </span>up<span style="color: #BBB"> </span>-d
+</code></pre></div>
+<p>This will:
+1. Pull the pre-built image <code>unclecode/crawl4ai:basic</code> (or <code>all</code>, depending on your configuration).
+2. Start the container and expose it on <code>http://localhost:11235</code>.</p>
+<hr />
+<h3 id="stopping-the-running-services"><strong>Stopping the Running Services</strong><a class="headerlink" href="#stopping-the-running-services" title="Anchor link to this section for reference">#</a></h3>
+<p>To stop the services started via Docker Compose, you can use:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker-compose<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>docker-compose.local.yml<span style="color: #BBB"> </span>down
+<span style="color: #3D7B7B; font-style: italic"># OR</span>
+docker-compose<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>docker-compose.hub.yml<span style="color: #BBB"> </span>down
+</code></pre></div>
+<p>If the containers don’t stop and the application is still running, check the running containers:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker<span style="color: #BBB"> </span>ps
+</code></pre></div>
+<p>Find the <code>CONTAINER ID</code> of the running service and stop it forcefully:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker<span style="color: #BBB"> </span>stop<span style="color: #BBB"> </span>&lt;CONTAINER_ID&gt;
+</code></pre></div>
+<hr />
+<h3 id="debugging-with-docker-compose"><strong>Debugging with Docker Compose</strong><a class="headerlink" href="#debugging-with-docker-compose" title="Anchor link to this section for reference">#</a></h3>
+<ul>
+<li>
+<p><strong>Check Logs</strong>: To view the container logs:
+  <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker-compose<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>docker-compose.local.yml<span style="color: #BBB"> </span>logs<span style="color: #BBB"> </span>-f
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Remove Orphaned Containers</strong>: If the service is still running unexpectedly:
+  <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker-compose<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>docker-compose.local.yml<span style="color: #BBB"> </span>down<span style="color: #BBB"> </span>--remove-orphans
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Manually Remove Network</strong>: If the network is still in use:
+  <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker<span style="color: #BBB"> </span>network<span style="color: #BBB"> </span>ls
+docker<span style="color: #BBB"> </span>network<span style="color: #BBB"> </span>rm<span style="color: #BBB"> </span>crawl4ai_default
+</code></pre></div></p>
+</li>
+</ul>
+<hr />
+<h3 id="why-use-docker-compose">Why Use Docker Compose?<a class="headerlink" href="#why-use-docker-compose" title="Anchor link to this section for reference">#</a></h3>
+<p>Docker Compose is the recommended way to deploy Crawl4AI because:
+1. It simplifies multi-container setups.
+2. Allows you to define environment variables, resources, and ports in a single file.
+3. Makes it easier to switch between local development and production-ready images.</p>
+<p>For example, your <code>docker-compose.yml</code> could include API keys, token settings, and memory limits, making deployment quick and consistent.</p>
+<h2 id="api-security">API Security 🔒<a class="headerlink" href="#api-security" title="Anchor link to this section for reference">#</a></h2>
+<h3 id="understanding-crawl4ai_api_token">Understanding CRAWL4AI_API_TOKEN<a class="headerlink" href="#understanding-crawl4ai_api_token" title="Anchor link to this section for reference">#</a></h3>
+<p>The <code>CRAWL4AI_API_TOKEN</code> provides optional security for your Crawl4AI instance:</p>
+<ul>
+<li>If <code>CRAWL4AI_API_TOKEN</code> is set: All API endpoints (except <code>/health</code>) require authentication</li>
+<li>If <code>CRAWL4AI_API_TOKEN</code> is not set: The API is publicly accessible</li>
+</ul>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Secured Instance</span>
+docker<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>-p<span style="color: #BBB"> </span><span style="color: #666">11235</span>:11235<span style="color: #BBB"> </span>-e<span style="color: #BBB"> </span><span style="color: #19177C">CRAWL4AI_API_TOKEN</span><span style="color: #666">=</span>your_secret_token<span style="color: #BBB"> </span>unclecode/crawl4ai:all
+
+<span style="color: #3D7B7B; font-style: italic"># Unsecured Instance</span>
+docker<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>-p<span style="color: #BBB"> </span><span style="color: #666">11235</span>:11235<span style="color: #BBB"> </span>unclecode/crawl4ai:all
+</code></pre></div>
+<h3 id="making-api-calls">Making API Calls<a class="headerlink" href="#making-api-calls" title="Anchor link to this section for reference">#</a></h3>
+<p>For secured instances, include the token in all requests:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">requests</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Setup headers if token is being used</span>
+api_token <span style="color: #666">=</span> <span style="color: #BA2121">&quot;your_secret_token&quot;</span>  <span style="color: #3D7B7B; font-style: italic"># Same token set in CRAWL4AI_API_TOKEN</span>
+headers <span style="color: #666">=</span> {<span style="color: #BA2121">&quot;Authorization&quot;</span>: <span style="color: #BA2121">f&quot;Bearer </span><span style="color: #A45A77; font-weight: bold">{</span>api_token<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>} <span style="color: #008000; font-weight: bold">if</span> api_token <span style="color: #008000; font-weight: bold">else</span> {}
+
+<span style="color: #3D7B7B; font-style: italic"># Making authenticated requests</span>
+response <span style="color: #666">=</span> requests<span style="color: #666">.</span>post(
+    <span style="color: #BA2121">&quot;http://localhost:11235/crawl&quot;</span>,
+    headers<span style="color: #666">=</span>headers,
+    json<span style="color: #666">=</span>{
+        <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://example.com&quot;</span>,
+        <span style="color: #BA2121">&quot;priority&quot;</span>: <span style="color: #666">10</span>
+    }
+)
+
+<span style="color: #3D7B7B; font-style: italic"># Checking task status</span>
+task_id <span style="color: #666">=</span> response<span style="color: #666">.</span>json()[<span style="color: #BA2121">&quot;task_id&quot;</span>]
+status <span style="color: #666">=</span> requests<span style="color: #666">.</span>get(
+    <span style="color: #BA2121">f&quot;http://localhost:11235/task/</span><span style="color: #A45A77; font-weight: bold">{</span>task_id<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>,
+    headers<span style="color: #666">=</span>headers
+)
+</code></pre></div>
+<h3 id="using-with-docker-compose">Using with Docker Compose<a class="headerlink" href="#using-with-docker-compose" title="Anchor link to this section for reference">#</a></h3>
+<p>In your <code>docker-compose.yml</code>:
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">services</span>:
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">crawl4ai</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">image</span>:<span style="color: #BBB"> </span>unclecode/crawl4ai:all
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">environment</span>:
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span>CRAWL4AI_API_TOKEN=${CRAWL4AI_API_TOKEN:-}<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic"># Optional</span>
+<span style="color: #BBB">    </span><span style="color: #3D7B7B; font-style: italic"># ... other configuration</span>
+</code></pre></div></p>
+<p>Then either:
+1. Set in <code>.env</code> file:
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>CRAWL4AI_API_TOKEN=your_secret_token
+</code></pre></div></p>
+<ol>
+<li>Or set via command line:
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #19177C">CRAWL4AI_API_TOKEN</span><span style="color: #666">=</span>your_secret_token<span style="color: #BBB"> </span>docker-compose<span style="color: #BBB"> </span>up
+</code></pre></div></li>
+</ol>
+<blockquote>
+<p><strong>Security Note</strong>: If you enable the API token, make sure to keep it secure and never commit it to version control. The token will be required for all API endpoints except the health check endpoint (<code>/health</code>).</p>
+</blockquote>
+<h2 id="configuration-options">Configuration Options 🔧<a class="headerlink" href="#configuration-options" title="Anchor link to this section for reference">#</a></h2>
+<h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Anchor link to this section for reference">#</a></h3>
+<p>You can configure the service using environment variables:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Basic configuration</span>
+docker<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>-p<span style="color: #BBB"> </span><span style="color: #666">11235</span>:11235<span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">    </span>-e<span style="color: #BBB"> </span><span style="color: #19177C">MAX_CONCURRENT_TASKS</span><span style="color: #666">=5</span><span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">    </span>unclecode/crawl4ai:all
+
+<span style="color: #3D7B7B; font-style: italic"># With security and LLM support</span>
+docker<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>-p<span style="color: #BBB"> </span><span style="color: #666">11235</span>:11235<span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">    </span>-e<span style="color: #BBB"> </span><span style="color: #19177C">CRAWL4AI_API_TOKEN</span><span style="color: #666">=</span>your_secret_token<span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">    </span>-e<span style="color: #BBB"> </span><span style="color: #19177C">OPENAI_API_KEY</span><span style="color: #666">=</span>sk-...<span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">    </span>-e<span style="color: #BBB"> </span><span style="color: #19177C">ANTHROPIC_API_KEY</span><span style="color: #666">=</span>sk-ant-...<span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">    </span>unclecode/crawl4ai:all
+</code></pre></div>
+<h3 id="using-docker-compose-recommended">Using Docker Compose (Recommended) 🐳<a class="headerlink" href="#using-docker-compose-recommended" title="Anchor link to this section for reference">#</a></h3>
+<p>Create a <code>docker-compose.yml</code>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">version</span>:<span style="color: #BBB"> </span><span style="color: #BA2121">&#39;3.8&#39;</span>
+
+<span style="color: #008000; font-weight: bold">services</span>:
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">crawl4ai</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">image</span>:<span style="color: #BBB"> </span>unclecode/crawl4ai:all
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">ports</span>:
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;11235:11235&quot;</span>
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">environment</span>:
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span>CRAWL4AI_API_TOKEN=${CRAWL4AI_API_TOKEN:-}<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic"># Optional API security</span>
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span>MAX_CONCURRENT_TASKS=5
+<span style="color: #BBB">      </span><span style="color: #3D7B7B; font-style: italic"># LLM Provider Keys</span>
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span>OPENAI_API_KEY=${OPENAI_API_KEY:-}
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span>ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">volumes</span>:
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span>/dev/shm:/dev/shm
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">deploy</span>:
+<span style="color: #BBB">      </span><span style="color: #008000; font-weight: bold">resources</span>:
+<span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">limits</span>:
+<span style="color: #BBB">          </span><span style="color: #008000; font-weight: bold">memory</span>:<span style="color: #BBB"> </span>4G
+<span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">reservations</span>:
+<span style="color: #BBB">          </span><span style="color: #008000; font-weight: bold">memory</span>:<span style="color: #BBB"> </span>1G
+</code></pre></div>
+<p>You can run it in two ways:</p>
+<ol>
+<li>
+<p>Using environment variables directly:
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #19177C">CRAWL4AI_API_TOKEN</span><span style="color: #666">=</span>secret123<span style="color: #BBB"> </span><span style="color: #19177C">OPENAI_API_KEY</span><span style="color: #666">=</span>sk-...<span style="color: #BBB"> </span>docker-compose<span style="color: #BBB"> </span>up
+</code></pre></div></p>
+</li>
+<li>
+<p>Using a <code>.env</code> file (recommended):
+Create a <code>.env</code> file in the same directory:
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code># API Security (optional)
+CRAWL4AI_API_TOKEN=your_secret_token
+
+# LLM Provider Keys
+OPENAI_API_KEY=sk-...
+ANTHROPIC_API_KEY=sk-ant-...
+
+# Other Configuration
+MAX_CONCURRENT_TASKS=5
+</code></pre></div></p>
+</li>
+</ol>
+<p>Then simply run:
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker-compose<span style="color: #BBB"> </span>up
+</code></pre></div></p>
+<h3 id="testing-the-deployment">Testing the Deployment 🧪<a class="headerlink" href="#testing-the-deployment" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">requests</span>
+
+<span style="color: #3D7B7B; font-style: italic"># For unsecured instances</span>
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">test_unsecured</span>():
+    <span style="color: #3D7B7B; font-style: italic"># Health check</span>
+    health <span style="color: #666">=</span> requests<span style="color: #666">.</span>get(<span style="color: #BA2121">&quot;http://localhost:11235/health&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Health check:&quot;</span>, health<span style="color: #666">.</span>json())
+
+    <span style="color: #3D7B7B; font-style: italic"># Basic crawl</span>
+    response <span style="color: #666">=</span> requests<span style="color: #666">.</span>post(
+        <span style="color: #BA2121">&quot;http://localhost:11235/crawl&quot;</span>,
+        json<span style="color: #666">=</span>{
+            <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://www.nbcnews.com/business&quot;</span>,
+            <span style="color: #BA2121">&quot;priority&quot;</span>: <span style="color: #666">10</span>
+        }
+    )
+    task_id <span style="color: #666">=</span> response<span style="color: #666">.</span>json()[<span style="color: #BA2121">&quot;task_id&quot;</span>]
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Task ID:&quot;</span>, task_id)
+
+<span style="color: #3D7B7B; font-style: italic"># For secured instances</span>
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">test_secured</span>(api_token):
+    headers <span style="color: #666">=</span> {<span style="color: #BA2121">&quot;Authorization&quot;</span>: <span style="color: #BA2121">f&quot;Bearer </span><span style="color: #A45A77; font-weight: bold">{</span>api_token<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>}
+
+    <span style="color: #3D7B7B; font-style: italic"># Basic crawl with authentication</span>
+    response <span style="color: #666">=</span> requests<span style="color: #666">.</span>post(
+        <span style="color: #BA2121">&quot;http://localhost:11235/crawl&quot;</span>,
+        headers<span style="color: #666">=</span>headers,
+        json<span style="color: #666">=</span>{
+            <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://www.nbcnews.com/business&quot;</span>,
+            <span style="color: #BA2121">&quot;priority&quot;</span>: <span style="color: #666">10</span>
+        }
+    )
+    task_id <span style="color: #666">=</span> response<span style="color: #666">.</span>json()[<span style="color: #BA2121">&quot;task_id&quot;</span>]
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Task ID:&quot;</span>, task_id)
+</code></pre></div>
+<h3 id="llm-extraction-example">LLM Extraction Example 🤖<a class="headerlink" href="#llm-extraction-example" title="Anchor link to this section for reference">#</a></h3>
+<p>When you've configured your LLM provider keys (via environment variables or <code>.env</code>), you can use LLM extraction:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://example.com&quot;</span>,
+    <span style="color: #BA2121">&quot;extraction_config&quot;</span>: {
+        <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;llm&quot;</span>,
+        <span style="color: #BA2121">&quot;params&quot;</span>: {
+            <span style="color: #BA2121">&quot;provider&quot;</span>: <span style="color: #BA2121">&quot;openai/gpt-4&quot;</span>,
+            <span style="color: #BA2121">&quot;instruction&quot;</span>: <span style="color: #BA2121">&quot;Extract main topics from the page&quot;</span>
+        }
+    }
+}
+
+<span style="color: #3D7B7B; font-style: italic"># Make the request (add headers if using API security)</span>
+response <span style="color: #666">=</span> requests<span style="color: #666">.</span>post(<span style="color: #BA2121">&quot;http://localhost:11235/crawl&quot;</span>, json<span style="color: #666">=</span>request)
+</code></pre></div>
+<blockquote>
+<p><strong>Note</strong>: Remember to add <code>.env</code> to your <code>.gitignore</code> to keep your API keys secure!</p>
+</blockquote>
+<h2 id="usage-examples">Usage Examples 📝<a class="headerlink" href="#usage-examples" title="Anchor link to this section for reference">#</a></h2>
+<h3 id="basic-crawling">Basic Crawling<a class="headerlink" href="#basic-crawling" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://www.nbcnews.com/business&quot;</span>,
+    <span style="color: #BA2121">&quot;priority&quot;</span>: <span style="color: #666">10</span>
+}
+
+response <span style="color: #666">=</span> requests<span style="color: #666">.</span>post(<span style="color: #BA2121">&quot;http://localhost:11235/crawl&quot;</span>, json<span style="color: #666">=</span>request)
+task_id <span style="color: #666">=</span> response<span style="color: #666">.</span>json()[<span style="color: #BA2121">&quot;task_id&quot;</span>]
+
+<span style="color: #3D7B7B; font-style: italic"># Get results</span>
+result <span style="color: #666">=</span> requests<span style="color: #666">.</span>get(<span style="color: #BA2121">f&quot;http://localhost:11235/task/</span><span style="color: #A45A77; font-weight: bold">{</span>task_id<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>)
+</code></pre></div>
+<h3 id="structured-data-extraction">Structured Data Extraction<a class="headerlink" href="#structured-data-extraction" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>schema <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;Crypto Prices&quot;</span>,
+    <span style="color: #BA2121">&quot;baseSelector&quot;</span>: <span style="color: #BA2121">&quot;.cds-tableRow-t45thuk&quot;</span>,
+    <span style="color: #BA2121">&quot;fields&quot;</span>: [
+        {
+            <span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;crypto&quot;</span>,
+            <span style="color: #BA2121">&quot;selector&quot;</span>: <span style="color: #BA2121">&quot;td:nth-child(1) h2&quot;</span>,
+            <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;text&quot;</span>,
+        },
+        {
+            <span style="color: #BA2121">&quot;name&quot;</span>: <span style="color: #BA2121">&quot;price&quot;</span>,
+            <span style="color: #BA2121">&quot;selector&quot;</span>: <span style="color: #BA2121">&quot;td:nth-child(2)&quot;</span>,
+            <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;text&quot;</span>,
+        }
+    ],
+}
+
+request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://www.coinbase.com/explore&quot;</span>,
+    <span style="color: #BA2121">&quot;extraction_config&quot;</span>: {
+        <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;json_css&quot;</span>,
+        <span style="color: #BA2121">&quot;params&quot;</span>: {<span style="color: #BA2121">&quot;schema&quot;</span>: schema}
+    }
+}
+</code></pre></div>
+<h3 id="dynamic-content-handling">Dynamic Content Handling<a class="headerlink" href="#dynamic-content-handling" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://www.nbcnews.com/business&quot;</span>,
+    <span style="color: #BA2121">&quot;js_code&quot;</span>: [
+        <span style="color: #BA2121">&quot;const loadMoreButton = Array.from(document.querySelectorAll(&#39;button&#39;)).find(button =&gt; button.textContent.includes(&#39;Load More&#39;)); loadMoreButton &amp;&amp; loadMoreButton.click();&quot;</span>
+    ],
+    <span style="color: #BA2121">&quot;wait_for&quot;</span>: <span style="color: #BA2121">&quot;article.tease-card:nth-child(10)&quot;</span>
+}
+</code></pre></div>
+<h3 id="ai-powered-extraction-full-version">AI-Powered Extraction (Full Version)<a class="headerlink" href="#ai-powered-extraction-full-version" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://www.nbcnews.com/business&quot;</span>,
+    <span style="color: #BA2121">&quot;extraction_config&quot;</span>: {
+        <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;cosine&quot;</span>,
+        <span style="color: #BA2121">&quot;params&quot;</span>: {
+            <span style="color: #BA2121">&quot;semantic_filter&quot;</span>: <span style="color: #BA2121">&quot;business finance economy&quot;</span>,
+            <span style="color: #BA2121">&quot;word_count_threshold&quot;</span>: <span style="color: #666">10</span>,
+            <span style="color: #BA2121">&quot;max_dist&quot;</span>: <span style="color: #666">0.2</span>,
+            <span style="color: #BA2121">&quot;top_k&quot;</span>: <span style="color: #666">3</span>
+        }
+    }
+}
+</code></pre></div>
+<h2 id="platform-specific-instructions">Platform-Specific Instructions 💻<a class="headerlink" href="#platform-specific-instructions" title="Anchor link to this section for reference">#</a></h2>
+<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker<span style="color: #BBB"> </span>pull<span style="color: #BBB"> </span>unclecode/crawl4ai:basic
+docker<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>-p<span style="color: #BBB"> </span><span style="color: #666">11235</span>:11235<span style="color: #BBB"> </span>unclecode/crawl4ai:basic
+</code></pre></div>
+<h3 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #3D7B7B; font-style: italic"># Basic version</span>
+docker<span style="color: #BBB"> </span>pull<span style="color: #BBB"> </span>unclecode/crawl4ai:basic
+docker<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>-p<span style="color: #BBB"> </span><span style="color: #666">11235</span>:11235<span style="color: #BBB"> </span>unclecode/crawl4ai:basic
+
+<span style="color: #3D7B7B; font-style: italic"># With GPU support</span>
+docker<span style="color: #BBB"> </span>pull<span style="color: #BBB"> </span>unclecode/crawl4ai:gpu
+docker<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>--gpus<span style="color: #BBB"> </span>all<span style="color: #BBB"> </span>-p<span style="color: #BBB"> </span><span style="color: #666">11235</span>:11235<span style="color: #BBB"> </span>unclecode/crawl4ai:gpu
+</code></pre></div>
+<h3 id="windows-powershell">Windows (PowerShell)<a class="headerlink" href="#windows-powershell" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker pull unclecode/crawl4ai:basic
+docker run -p 11235:11235 unclecode/crawl4ai:basic
+</code></pre></div>
+<h2 id="testing">Testing 🧪<a class="headerlink" href="#testing" title="Anchor link to this section for reference">#</a></h2>
+<p>Save this as <code>test_docker.py</code>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">requests</span>
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">json</span>
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">time</span>
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">sys</span>
+
+<span style="color: #008000; font-weight: bold">class</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">Crawl4AiTester</span>:
+    <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">__init__</span>(<span style="color: #008000">self</span>, base_url: <span style="color: #008000">str</span> <span style="color: #666">=</span> <span style="color: #BA2121">&quot;http://localhost:11235&quot;</span>):
+        <span style="color: #008000">self</span><span style="color: #666">.</span>base_url <span style="color: #666">=</span> base_url
+
+    <span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">submit_and_wait</span>(<span style="color: #008000">self</span>, request_data: <span style="color: #008000">dict</span>, timeout: <span style="color: #008000">int</span> <span style="color: #666">=</span> <span style="color: #666">300</span>) <span style="color: #666">-&gt;</span> <span style="color: #008000">dict</span>:
+        <span style="color: #3D7B7B; font-style: italic"># Submit crawl job</span>
+        response <span style="color: #666">=</span> requests<span style="color: #666">.</span>post(<span style="color: #BA2121">f&quot;</span><span style="color: #A45A77; font-weight: bold">{</span><span style="color: #008000">self</span><span style="color: #666">.</span>base_url<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">/crawl&quot;</span>, json<span style="color: #666">=</span>request_data)
+        task_id <span style="color: #666">=</span> response<span style="color: #666">.</span>json()[<span style="color: #BA2121">&quot;task_id&quot;</span>]
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;Task ID: </span><span style="color: #A45A77; font-weight: bold">{</span>task_id<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>)
+
+        <span style="color: #3D7B7B; font-style: italic"># Poll for result</span>
+        start_time <span style="color: #666">=</span> time<span style="color: #666">.</span>time()
+        <span style="color: #008000; font-weight: bold">while</span> <span style="color: #008000; font-weight: bold">True</span>:
+            <span style="color: #008000; font-weight: bold">if</span> time<span style="color: #666">.</span>time() <span style="color: #666">-</span> start_time <span style="color: #666">&gt;</span> timeout:
+                <span style="color: #008000; font-weight: bold">raise</span> <span style="color: #CB3F38; font-weight: bold">TimeoutError</span>(<span style="color: #BA2121">f&quot;Task </span><span style="color: #A45A77; font-weight: bold">{</span>task_id<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121"> timeout&quot;</span>)
+
+            result <span style="color: #666">=</span> requests<span style="color: #666">.</span>get(<span style="color: #BA2121">f&quot;</span><span style="color: #A45A77; font-weight: bold">{</span><span style="color: #008000">self</span><span style="color: #666">.</span>base_url<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">/task/</span><span style="color: #A45A77; font-weight: bold">{</span>task_id<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>)
+            status <span style="color: #666">=</span> result<span style="color: #666">.</span>json()
+
+            <span style="color: #008000; font-weight: bold">if</span> status[<span style="color: #BA2121">&quot;status&quot;</span>] <span style="color: #666">==</span> <span style="color: #BA2121">&quot;completed&quot;</span>:
+                <span style="color: #008000; font-weight: bold">return</span> status
+
+            time<span style="color: #666">.</span>sleep(<span style="color: #666">2</span>)
+
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">test_deployment</span>():
+    tester <span style="color: #666">=</span> Crawl4AiTester()
+
+    <span style="color: #3D7B7B; font-style: italic"># Test basic crawl</span>
+    request <span style="color: #666">=</span> {
+        <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://www.nbcnews.com/business&quot;</span>,
+        <span style="color: #BA2121">&quot;priority&quot;</span>: <span style="color: #666">10</span>
+    }
+
+    result <span style="color: #666">=</span> tester<span style="color: #666">.</span>submit_and_wait(request)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Basic crawl successful!&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;Content length: </span><span style="color: #A45A77; font-weight: bold">{</span><span style="color: #008000">len</span>(result[<span style="color: #BA2121">&#39;result&#39;</span>][<span style="color: #BA2121">&#39;markdown&#39;</span>])<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&quot;</span>)
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #19177C">__name__</span> <span style="color: #666">==</span> <span style="color: #BA2121">&quot;__main__&quot;</span>:
+    test_deployment()
+</code></pre></div>
+<h2 id="advanced-configuration">Advanced Configuration ⚙️<a class="headerlink" href="#advanced-configuration" title="Anchor link to this section for reference">#</a></h2>
+<h3 id="crawler-parameters">Crawler Parameters<a class="headerlink" href="#crawler-parameters" title="Anchor link to this section for reference">#</a></h3>
+<p>The <code>crawler_params</code> field allows you to configure the browser instance and crawling behavior. Here are key parameters you can use:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://example.com&quot;</span>,
+    <span style="color: #BA2121">&quot;crawler_params&quot;</span>: {
+        <span style="color: #3D7B7B; font-style: italic"># Browser Configuration</span>
+        <span style="color: #BA2121">&quot;headless&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,                    <span style="color: #3D7B7B; font-style: italic"># Run in headless mode</span>
+        <span style="color: #BA2121">&quot;browser_type&quot;</span>: <span style="color: #BA2121">&quot;chromium&quot;</span>,          <span style="color: #3D7B7B; font-style: italic"># chromium/firefox/webkit</span>
+        <span style="color: #BA2121">&quot;user_agent&quot;</span>: <span style="color: #BA2121">&quot;custom-agent&quot;</span>,        <span style="color: #3D7B7B; font-style: italic"># Custom user agent</span>
+        <span style="color: #BA2121">&quot;proxy&quot;</span>: <span style="color: #BA2121">&quot;http://proxy:8080&quot;</span>,        <span style="color: #3D7B7B; font-style: italic"># Proxy configuration</span>
+
+        <span style="color: #3D7B7B; font-style: italic"># Performance &amp; Behavior</span>
+        <span style="color: #BA2121">&quot;page_timeout&quot;</span>: <span style="color: #666">30000</span>,               <span style="color: #3D7B7B; font-style: italic"># Page load timeout (ms)</span>
+        <span style="color: #BA2121">&quot;verbose&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,                     <span style="color: #3D7B7B; font-style: italic"># Enable detailed logging</span>
+        <span style="color: #BA2121">&quot;semaphore_count&quot;</span>: <span style="color: #666">5</span>,               <span style="color: #3D7B7B; font-style: italic"># Concurrent request limit</span>
+
+        <span style="color: #3D7B7B; font-style: italic"># Anti-Detection Features</span>
+        <span style="color: #BA2121">&quot;simulate_user&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,               <span style="color: #3D7B7B; font-style: italic"># Simulate human behavior</span>
+        <span style="color: #BA2121">&quot;magic&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,                       <span style="color: #3D7B7B; font-style: italic"># Advanced anti-detection</span>
+        <span style="color: #BA2121">&quot;override_navigator&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,          <span style="color: #3D7B7B; font-style: italic"># Override navigator properties</span>
+
+        <span style="color: #3D7B7B; font-style: italic"># Session Management</span>
+        <span style="color: #BA2121">&quot;user_data_dir&quot;</span>: <span style="color: #BA2121">&quot;./browser-data&quot;</span>,   <span style="color: #3D7B7B; font-style: italic"># Browser profile location</span>
+        <span style="color: #BA2121">&quot;use_managed_browser&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,         <span style="color: #3D7B7B; font-style: italic"># Use persistent browser</span>
+    }
+}
+</code></pre></div>
+<h3 id="extra-parameters">Extra Parameters<a class="headerlink" href="#extra-parameters" title="Anchor link to this section for reference">#</a></h3>
+<p>The <code>extra</code> field allows passing additional parameters directly to the crawler's <code>arun</code> function:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://example.com&quot;</span>,
+    <span style="color: #BA2121">&quot;extra&quot;</span>: {
+        <span style="color: #BA2121">&quot;word_count_threshold&quot;</span>: <span style="color: #666">10</span>,          <span style="color: #3D7B7B; font-style: italic"># Min words per block</span>
+        <span style="color: #BA2121">&quot;only_text&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,                   <span style="color: #3D7B7B; font-style: italic"># Extract only text</span>
+        <span style="color: #BA2121">&quot;bypass_cache&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,                <span style="color: #3D7B7B; font-style: italic"># Force fresh crawl</span>
+        <span style="color: #BA2121">&quot;process_iframes&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,             <span style="color: #3D7B7B; font-style: italic"># Include iframe content</span>
+    }
+}
+</code></pre></div>
+<h3 id="complete-examples">Complete Examples<a class="headerlink" href="#complete-examples" title="Anchor link to this section for reference">#</a></h3>
+<p>1. <strong>Advanced News Crawling</strong>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://www.nbcnews.com/business&quot;</span>,
+    <span style="color: #BA2121">&quot;crawler_params&quot;</span>: {
+        <span style="color: #BA2121">&quot;headless&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,
+        <span style="color: #BA2121">&quot;page_timeout&quot;</span>: <span style="color: #666">30000</span>,
+        <span style="color: #BA2121">&quot;remove_overlay_elements&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>      <span style="color: #3D7B7B; font-style: italic"># Remove popups</span>
+    },
+    <span style="color: #BA2121">&quot;extra&quot;</span>: {
+        <span style="color: #BA2121">&quot;word_count_threshold&quot;</span>: <span style="color: #666">50</span>,          <span style="color: #3D7B7B; font-style: italic"># Longer content blocks</span>
+        <span style="color: #BA2121">&quot;bypass_cache&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>                 <span style="color: #3D7B7B; font-style: italic"># Fresh content</span>
+    },
+    <span style="color: #BA2121">&quot;css_selector&quot;</span>: <span style="color: #BA2121">&quot;.article-body&quot;</span>
+}
+</code></pre></div></p>
+<p>2. <strong>Anti-Detection Configuration</strong>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://example.com&quot;</span>,
+    <span style="color: #BA2121">&quot;crawler_params&quot;</span>: {
+        <span style="color: #BA2121">&quot;simulate_user&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,
+        <span style="color: #BA2121">&quot;magic&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,
+        <span style="color: #BA2121">&quot;override_navigator&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,
+        <span style="color: #BA2121">&quot;user_agent&quot;</span>: <span style="color: #BA2121">&quot;Mozilla/5.0 ...&quot;</span>,
+        <span style="color: #BA2121">&quot;headers&quot;</span>: {
+            <span style="color: #BA2121">&quot;Accept-Language&quot;</span>: <span style="color: #BA2121">&quot;en-US,en;q=0.9&quot;</span>
+        }
+    }
+}
+</code></pre></div></p>
+<p>3. <strong>LLM Extraction with Custom Parameters</strong>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://openai.com/pricing&quot;</span>,
+    <span style="color: #BA2121">&quot;extraction_config&quot;</span>: {
+        <span style="color: #BA2121">&quot;type&quot;</span>: <span style="color: #BA2121">&quot;llm&quot;</span>,
+        <span style="color: #BA2121">&quot;params&quot;</span>: {
+            <span style="color: #BA2121">&quot;provider&quot;</span>: <span style="color: #BA2121">&quot;openai/gpt-4&quot;</span>,
+            <span style="color: #BA2121">&quot;schema&quot;</span>: pricing_schema
+        }
+    },
+    <span style="color: #BA2121">&quot;crawler_params&quot;</span>: {
+        <span style="color: #BA2121">&quot;verbose&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,
+        <span style="color: #BA2121">&quot;page_timeout&quot;</span>: <span style="color: #666">60000</span>
+    },
+    <span style="color: #BA2121">&quot;extra&quot;</span>: {
+        <span style="color: #BA2121">&quot;word_count_threshold&quot;</span>: <span style="color: #666">1</span>,
+        <span style="color: #BA2121">&quot;only_text&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>
+    }
+}
+</code></pre></div></p>
+<p>4. <strong>Session-Based Dynamic Content</strong>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://example.com&quot;</span>,
+    <span style="color: #BA2121">&quot;crawler_params&quot;</span>: {
+        <span style="color: #BA2121">&quot;session_id&quot;</span>: <span style="color: #BA2121">&quot;dynamic_session&quot;</span>,
+        <span style="color: #BA2121">&quot;headless&quot;</span>: <span style="color: #008000; font-weight: bold">False</span>,
+        <span style="color: #BA2121">&quot;page_timeout&quot;</span>: <span style="color: #666">60000</span>
+    },
+    <span style="color: #BA2121">&quot;js_code&quot;</span>: [<span style="color: #BA2121">&quot;window.scrollTo(0, document.body.scrollHeight);&quot;</span>],
+    <span style="color: #BA2121">&quot;wait_for&quot;</span>: <span style="color: #BA2121">&quot;js:() =&gt; document.querySelectorAll(&#39;.item&#39;).length &gt; 10&quot;</span>,
+    <span style="color: #BA2121">&quot;extra&quot;</span>: {
+        <span style="color: #BA2121">&quot;delay_before_return_html&quot;</span>: <span style="color: #666">2.0</span>
+    }
+}
+</code></pre></div></p>
+<p>5. <strong>Screenshot with Custom Timing</strong>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>request <span style="color: #666">=</span> {
+    <span style="color: #BA2121">&quot;urls&quot;</span>: <span style="color: #BA2121">&quot;https://example.com&quot;</span>,
+    <span style="color: #BA2121">&quot;screenshot&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,
+    <span style="color: #BA2121">&quot;crawler_params&quot;</span>: {
+        <span style="color: #BA2121">&quot;headless&quot;</span>: <span style="color: #008000; font-weight: bold">True</span>,
+        <span style="color: #BA2121">&quot;screenshot_wait_for&quot;</span>: <span style="color: #BA2121">&quot;.main-content&quot;</span>
+    },
+    <span style="color: #BA2121">&quot;extra&quot;</span>: {
+        <span style="color: #BA2121">&quot;delay_before_return_html&quot;</span>: <span style="color: #666">3.0</span>
+    }
+}
+</code></pre></div></p>
+<h3 id="parameter-reference-table">Parameter Reference Table<a class="headerlink" href="#parameter-reference-table" title="Anchor link to this section for reference">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Browser</td>
+<td>headless</td>
+<td>bool</td>
+<td>Run browser in headless mode</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>browser_type</td>
+<td>str</td>
+<td>Browser engine selection</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>user_agent</td>
+<td>str</td>
+<td>Custom user agent string</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>proxy</td>
+<td>str</td>
+<td>Proxy server URL</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>headers</td>
+<td>dict</td>
+<td>Custom HTTP headers</td>
+</tr>
+<tr>
+<td>Timing</td>
+<td>page_timeout</td>
+<td>int</td>
+<td>Page load timeout (ms)</td>
+</tr>
+<tr>
+<td>Timing</td>
+<td>delay_before_return_html</td>
+<td>float</td>
+<td>Wait before capture</td>
+</tr>
+<tr>
+<td>Anti-Detection</td>
+<td>simulate_user</td>
+<td>bool</td>
+<td>Human behavior simulation</td>
+</tr>
+<tr>
+<td>Anti-Detection</td>
+<td>magic</td>
+<td>bool</td>
+<td>Advanced protection</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>session_id</td>
+<td>str</td>
+<td>Browser session ID</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>user_data_dir</td>
+<td>str</td>
+<td>Profile directory</td>
+</tr>
+<tr>
+<td>Content</td>
+<td>word_count_threshold</td>
+<td>int</td>
+<td>Minimum words per block</td>
+</tr>
+<tr>
+<td>Content</td>
+<td>only_text</td>
+<td>bool</td>
+<td>Text-only extraction</td>
+</tr>
+<tr>
+<td>Content</td>
+<td>process_iframes</td>
+<td>bool</td>
+<td>Include iframe content</td>
+</tr>
+<tr>
+<td>Debug</td>
+<td>verbose</td>
+<td>bool</td>
+<td>Detailed logging</td>
+</tr>
+<tr>
+<td>Debug</td>
+<td>log_console</td>
+<td>bool</td>
+<td>Browser console logs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="troubleshooting">Troubleshooting 🔍<a class="headerlink" href="#troubleshooting" title="Anchor link to this section for reference">#</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Anchor link to this section for reference">#</a></h3>
+<p>1. <strong>Connection Refused</strong>
+   <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>Error: Connection refused at localhost:11235
+</code></pre></div>
+   Solution: Ensure the container is running and ports are properly mapped.</p>
+<p>2. <strong>Resource Limits</strong>
+   <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>Error: No available slots
+</code></pre></div>
+   Solution: Increase MAX_CONCURRENT_TASKS or container resources.</p>
+<p>3. <strong>GPU Access</strong>
+   <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>Error: GPU not found
+</code></pre></div>
+   Solution: Ensure proper NVIDIA drivers and use <code>--gpus all</code> flag.</p>
+<h3 id="debug-mode">Debug Mode<a class="headerlink" href="#debug-mode" title="Anchor link to this section for reference">#</a></h3>
+<p>Access container for debugging:
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>-it<span style="color: #BBB"> </span>--entrypoint<span style="color: #BBB"> </span>/bin/bash<span style="color: #BBB"> </span>unclecode/crawl4ai:all
+</code></pre></div></p>
+<p>View container logs:
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>docker<span style="color: #BBB"> </span>logs<span style="color: #BBB"> </span><span style="color: #666">[</span>container_id<span style="color: #666">]</span>
+</code></pre></div></p>
+<h2 id="best-practices">Best Practices 🌟<a class="headerlink" href="#best-practices" title="Anchor link to this section for reference">#</a></h2>
+<p>1. <strong>Resource Management</strong>
+   - Set appropriate memory and CPU limits
+   - Monitor resource usage via health endpoint
+   - Use basic version for simple crawling tasks</p>
+<p>2. <strong>Scaling</strong>
+   - Use multiple containers for high load
+   - Implement proper load balancing
+   - Monitor performance metrics</p>
+<p>3. <strong>Security</strong>
+   - Use environment variables for sensitive data
+   - Implement proper network isolation
+   - Regular security updates</p>
+<h2 id="api-reference">API Reference 📚<a class="headerlink" href="#api-reference" title="Anchor link to this section for reference">#</a></h2>
+<h3 id="health-check">Health Check<a class="headerlink" href="#health-check" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="border: 1px solid #F00">GET /health</span>
+</code></pre></div>
+<h3 id="submit-crawl-task">Submit Crawl Task<a class="headerlink" href="#submit-crawl-task" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="border: 1px solid #F00">POST /crawl</span>
+<span style="border: 1px solid #F00">Content-Type: application/json</span>
+
+<span style="border: 1px solid #F00">{</span>
+<span style="border: 1px solid #F00">    &quot;urls&quot;: &quot;string or array&quot;,</span>
+<span style="border: 1px solid #F00">    &quot;extraction_config&quot;: {</span>
+<span style="border: 1px solid #F00">        &quot;type&quot;: &quot;basic|llm|cosine|json_css&quot;,</span>
+<span style="border: 1px solid #F00">        &quot;params&quot;: {}</span>
+<span style="border: 1px solid #F00">    },</span>
+<span style="border: 1px solid #F00">    &quot;priority&quot;: 1-10,</span>
+<span style="border: 1px solid #F00">    &quot;ttl&quot;: 3600</span>
+<span style="border: 1px solid #F00">}</span>
+</code></pre></div>
+<h3 id="get-task-status">Get Task Status<a class="headerlink" href="#get-task-status" title="Anchor link to this section for reference">#</a></h3>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span style="border: 1px solid #F00">GET /task/{task_id}</span>
+</code></pre></div>
+<p>For more details, visit the <a href="https://docs.crawl4ai.com/">official documentation</a>.</p>
+</section>
+
+<section id="mkdocs-terminal-after-content">
+    
+</section>
+
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>
